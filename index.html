@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codenominator Function and the Involution Jimm</title>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: "Georgia", serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #444;
+            margin-top: 20px;
+        }
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f4f4f4;
+        }
+        .references {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Codenominator Function and the Involution Jimm</h1>
+        <p>
+            The <strong>codenominator</strong> is a function that extends the <a href="https://en.wikipedia.org/wiki/Fibonacci_sequence" target="_blank">Fibonacci sequence</a> to the index set of positive rational numbers, <math>\mathbf{Q}^+</math>. Many known Fibonacci identities carry over to the codenominator. One can express Dyer's outer automorphism <math>\alpha</math> of the extended <a href="https://en.wikipedia.org/wiki/Modular_group" target="_blank">modular group</a> <math>\text{PGL}(2, \mathbf{Z})</math> in terms of the codenominator. This automorphism can be viewed as an automorphism group of the <a href="https://en.wikipedia.org/wiki/Unrooted_binary_tree" target="_blank">trivalent tree</a>. The real <math>\alpha</math>-covariant <a href="https://en.wikipedia.org/wiki/Modular_form" target="_blank">modular function</a> Jimm on the real line <math>\mathbf{R}</math> is defined via the codenominator. Jimm relates the <a href="https://en.wikipedia.org/wiki/Stern-Brocot_tree" target="_blank">Stern-Brocot tree</a> to the Bird tree.
+        </p>
+        <p>
+            Jimm induces an involution of the moduli space of rank-2 pseudolattices and is related to the arithmetic of real <a href="https://en.wikipedia.org/wiki/Quadratic_irrational" target="_blank">quadratic irrationals</a>.
+        </p>
+    </header>
+
+    <section>
+        <h2>Definition of the Codenominator</h2>
+        <p>
+            The <strong>codenominator function</strong> <math>F: \mathbf{Q}^+ \to \mathbf{Z}^+</math> is defined by the following system of <a href="https://en.wikipedia.org/wiki/Functional_equation" target="_blank">functional equations</a>:
+        </p>
+        <div class="equation">
+            <math>
+                F\left(1 + \frac{1}{x}\right) = F(x), \quad F\left(\frac{1}{1+x}\right) = F(x) + F\left(\frac{1}{x}\right), \quad x \in \mathbf{Q}^+.
+            </math>
+        </div>
+        <p>The initial condition is given by:</p>
+        <div class="equation">
+            <math>F(1) = 1.</math>
+        </div>
+        <p>
+            The function <math>F(1/x) \equiv F(1 + x)</math> is called the <strong>conumerator</strong>. The name "codenominator" comes from the fact that the usual denominator function <math>D: \mathbf{Q}^+ \to \mathbf{Z}^+</math> can be defined by similar functional equations:
+        </p>
+        <div class="equation">
+            <math>
+                D(1+x) = D(x), \quad D\left(\frac{1}{1+x}\right) = D(x) + D\left(\frac{1}{x}\right).
+            </math>
+        </div>
+        <p>with the initial condition:</p>
+        <div class="equation">
+            <math>D(1) = 1.</math>
+        </div>
+        <p>The codenominator takes every positive integral value infinitely often.</p>
+    </section>
+
+    <section>
+        <h2>Connection with the Fibonacci Sequence</h2>
+        <p>
+            For integer arguments, the codenominator agrees with the standard Fibonacci sequence, satisfying the recurrence:
+        </p>
+        <div class="equation">
+            <math>
+                F_{n+1} = F_n + F_{n-1}, \quad F_1 = F_2 = 1.
+            </math>
+        </div>
+        <p>
+            The codenominator extends this sequence to positive rational arguments. Moreover, for every rational <math>x \in \mathbf{Q}^+</math>, the sequence <math>G_n := F(x + n)</math> is the so-called <strong>Gibonacci sequence</strong> (also called the generalized Fibonacci sequence). It is defined by:
+        </p>
+        <div class="equation">
+            <math>
+                G_0 := F(x), \quad G_1 := F(1+x),
+            </math>
+        </div>
+        <p>and the recurrence:</p>
+        <div class="equation">
+            <math>
+                G_{n+2} = G_{n+1} + G_n.
+            </math>
+        </div>
+    </section>
+
+    <section>
+        <h2>Examples</h2>
+        <p>Here are some examples of the codenominator function:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><math>F(n) = F_n</math></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><math>F(1/2) = 2</math>; more generally, <math>F(1/n) = F(n+1) = F_{n+1}</math>.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><math>F(n + 1/2) = L_n = F_{n+1} + F_{n-1}</math></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><math>F(n + 1/3) = 2F_{n+1} + F_{n-1}</math></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><math>F(n + 1/4) = 3F_{n+1} + F_{n-1}</math></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Properties of the Codenominator</h2>
+        <ol>
+            <li><strong>Fibonacci Recursion:</strong>
+                <math>
+                    F(x + n) = F_n F(x + 1) + F_{n-1} F(x), \quad n > 1, x \in \mathbf{Q}^+.
+                </math>
+            </li>
+            <li><strong>Symmetry:</strong>
+                <math>
+                    F(1 - x) = F(x), \quad x \in (0, 1) \cap \mathbf{Q}.
+                </math>
+            </li>
+            <li><strong>Continued Fractions:</strong> For a rational number <math>x</math> expressed as a simple continued fraction <math>[n_0, n_1, ..., n_k]</math>, the value of <math>F(x)</math> can be computed recursively:
+                <math>
+                    F[n_0, n_1, ..., n_k] = F_{n_0}F[n_1, ..., n_k] + F_{n_0 - 1}F[n_1 + 1, ..., n_k].
+                </math>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Involution Jimm</h2>
+        <p>
+            The <strong>Jimm</strong> function is defined on positive rational arguments via:
+        </p>
+        <div class="equation">
+            <math>
+                J(x) := \frac{F(1/x)}{F(x)}, \quad x \in \mathbf{Q}^+.
+            </math>
+        </div>
+        <p>
+            This function is involutive and admits a natural extension to non-zero rationals via <math>J(-x) := -1/J(x)</math>, which is also involutive.
+        </p>
+    </section>
+
+    <footer class="references">
+        <h3>References</h3>
+        <p>
+            For more details, see <a href="https://doi.org/10.1016/j.bulsci.2022.103192" target="_blank">Uludağ and Gökmen (2022)</a>.
+        </p>
+    </footer>
+</body>
+</html>
